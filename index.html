@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Template</title>
+    <style>
+        @page {
+            size: 8.5in 11in;
+            margin: 0.5in;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 7.5in;
+            margin: 0 auto;
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #333;
+            padding-bottom: 20px;
+        }
+        
+        .logo-placeholder {
+            width: 1.5in;
+            height: 0.75in;
+            background-color: #000;
+            color: #1e90ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            text-align: center;
+            padding: 5px;
+        }
+        
+        .clinic-info {
+            text-align: right;
+            font-size: 12px;
+            line-height: 1.4;
+        }
+        
+        .invoice-title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 25px 0;
+        }
+        
+        .two-column-layout {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+        
+        .member-info {
+            width: 48%;
+        }
+        
+        .invoice-details {
+            width: 48%;
+        }
+        
+        .section-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+        }
+        
+        .info-field {
+            margin-bottom: 8px;
+            font-size: 13px;
+        }
+        
+        .info-field label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 2px;
+        }
+        
+        .info-field .value {
+            padding: 5px;
+            background-color: #f5f5f5;
+            border-radius: 3px;
+            min-height: 20px;
+        }
+        
+        .balance-summary {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 25px;
+            border-radius: 5px;
+        }
+        
+        .balance-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        
+        .balance-row.total {
+            font-weight: bold;
+            font-size: 16px;
+            border-top: 1px solid #ccc;
+            padding-top: 10px;
+            margin-top: 10px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 25px;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+            text-align: left;
+            padding: 10px;
+            border: 1px solid #ddd;
+            font-size: 14px;
+        }
+        
+        td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            font-size: 13px;
+        }
+        
+        .totals-section {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 20px;
+        }
+        
+        .totals-box {
+            width: 300px;
+            border: 1px solid #ddd;
+            padding: 15px;
+        }
+        
+        .total-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        
+        .total-row.final {
+            font-weight: bold;
+            font-size: 16px;
+            border-top: 1px solid #ccc;
+            padding-top: 10px;
+            margin-top: 10px;
+        }
+        
+        .placeholder {
+            color: #666;
+            font-style: italic;
+        }
+        
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+            border-top: 1px solid #ccc;
+            padding-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <div class="logo-placeholder">
+                AI-generated content may be incorrect.
+            </div>
+            <div class="clinic-info">
+                10526 SE Washington Street, Suite A-103<br>
+                Portland, OR 97216<br>
+                Phone: (503) 905-5200
+            </div>
+        </div>
+        
+        <!-- Invoice Title -->
+        <div class="invoice-title">INVOICE</div>
+        
+        <!-- Member Info & Invoice Details -->
+        <div class="two-column-layout">
+            <!-- Member Information -->
+            <div class="member-info">
+                <div class="section-title">Member Information</div>
+                <div class="info-field">
+                    <label>Member Name</label>
+                    <div class="value placeholder">[Member Name]</div>
+                </div>
+                <div class="info-field">
+                    <label>Billing Address</label>
+                    <div class="value placeholder">[Billing Address]</div>
+                </div>
+                <div class="info-field">
+                    <div class="value placeholder">[City], [State], [Zip]</div>
+                </div>
+                <div class="info-field">
+                    <label>Primary Cell</label>
+                    <div class="value placeholder">[Primary Cell]</div>
+                </div>
+                <div class="info-field">
+                    <label>Primary Email</label>
+                    <div class="value placeholder">[Primary Email]</div>
+                </div>
+            </div>
+            
+            <!-- Invoice Details -->
+            <div class="invoice-details">
+                <div class="section-title">Invoice Details</div>
+                <div class="info-field">
+                    <label>Invoice Number</label>
+                    <div class="value placeholder">[HW Generate Invoice Number]</div>
+                </div>
+                <div class="info-field">
+                    <label>Issue Date</label>
+                    <div class="value placeholder">[5 Days Prior to Due Date]</div>
+                </div>
+                <div class="info-field">
+                    <label>Due Date</label>
+                    <div class="value placeholder">[1st - 5th of Every Month]</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Balance Summary -->
+        <div class="balance-summary">
+            <div class="section-title">Balance Summary</div>
+            <div class="balance-row">
+                <span>Previous Balance Amount</span>
+                <span>$[Amount Previously Invoiced]</span>
+            </div>
+            <div class="balance-row">
+                <span>Amount Paid</span>
+                <span>$[Amount Paid toward last invoiced amount]</span>
+            </div>
+            <div class="balance-row total">
+                <span>Amount Outstanding</span>
+                <span>$[Previous Balance less Amount Paid]</span>
+            </div>
+        </div>
+        
+        <!-- Monthly Recurring Fees Table -->
+        <div class="section-title">Monthly Recurring Fees</div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Service</th>
+                    <th>Pet Name / Pet ID</th>
+                    <th>Monthly Fee</th>
+                    <th>Subtotal</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Total Lifetime Care™ Plan</td>
+                    <td class="placeholder">[Pet Name / Pet ID]</td>
+                    <td class="placeholder">$[Monthly Support Fee Total]</td>
+                    <td class="placeholder">= Amount in Column 3</td>
+                </tr>
+                <tr>
+                    <td>Total Lifetime Care™ Plan</td>
+                    <td>Teddy / 104756</td>
+                    <td>$97.39</td>
+                    <td>$97.39</td>
+                </tr>
+                <tr>
+                    <td>Total Lifetime Care™ Plan</td>
+                    <td>Ziggy / 108550</td>
+                    <td>$105.59</td>
+                    <td>$105.59</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <!-- Totals Section -->
+        <div class="totals-section">
+            <div class="totals-box">
+                <div class="total-row">
+                    <span>Monthly Total</span>
+                    <span>$202.98</span>
+                </div>
+                <div class="total-row">
+                    <span>Past Due Amount</span>
+                    <span>$0.00</span>
+                </div>
+                <div class="total-row final">
+                    <span>Total Amount Due</span>
+                    <span>$202.98</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <p>Thank you for your business. Please remit payment by the due date.</p>
+        </div>
+    </div>
+</body>
+</html>
