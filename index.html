@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Invoice Template</title>
+    <title>Invoice Template - Styled</title>
     <style>
         @page {
             size: 8.5in 11in;
@@ -14,8 +14,8 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            color: #333;
-            line-height: 1.4;
+            color: #2c3e50;
+            line-height: 1.5;
         }
         
         .container {
@@ -24,133 +24,201 @@
         }
         
         /* Header Section */
-        .header {
+        .header-section {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
             padding-bottom: 20px;
-            border-bottom: 2px solid #333;
+            border-bottom: 3px solid #3498db;
         }
         
-        .logo-placeholder {
-            font-weight: bold;
-            font-size: 20px;
-            color: #333;
-        }
-        
-        .company-info {
-            text-align: right;
-            font-size: 12px;
-            line-height: 1.6;
-        }
-        
-        /* Title Section */
-        .invoice-title {
+        .logo-area {
+            width: 1.6in;
+            height: 0.8in;
+            background-color: #000;
+            color: #3498db;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
             text-align: center;
-            font-size: 32px;
+            padding: 8px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+        
+        .clinic-info {
+            text-align: right;
+            font-size: 13px;
+            line-height: 1.6;
+            color: #555;
+        }
+        
+        /* Main Invoice Title */
+        .main-title {
+            text-align: center;
+            font-size: 36px;
             font-weight: 300;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             margin: 30px 0 40px 0;
-            color: #222;
+            color: #2c3e50;
+            text-transform: uppercase;
         }
         
         /* Two Column Layout */
-        .two-column {
+        .content-columns {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
+            gap: 30px;
         }
         
-        .column-left {
+        .member-column {
             width: 55%;
         }
         
-        .column-right {
-            width: 40%;
+        .invoice-column {
+            width: 45%;
         }
         
-        /* Section Styling */
-        .section {
+        /* Section Headers */
+        .section-header {
+            font-size: 20px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #ecf0f1;
+            position: relative;
+        }
+        
+        .section-header:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 80px;
+            height: 2px;
+            background-color: #3498db;
+        }
+        
+        /* Member Information Styling */
+        .member-details {
+            background-color: #f8fafc;
+            border: 1px solid #e8edf2;
+            border-radius: 6px;
+            padding: 20px;
             margin-bottom: 25px;
         }
         
-        .section-header {
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 15px;
-            color: #222;
-            padding-bottom: 5px;
-            border-bottom: 1px solid #ddd;
-        }
-        
-        .info-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 8px;
-        }
-        
-        .info-item {
+        .info-line {
+            margin-bottom: 12px;
             font-size: 14px;
         }
         
         .info-label {
             font-weight: 600;
-            color: #555;
+            color: #5d6d7e;
+            display: block;
+            margin-bottom: 3px;
+            font-size: 13px;
         }
         
-        /* Invoice Details Styling */
-        .invoice-details {
-            background-color: #f8f9fa;
-            border: 1px solid #e0e0e0;
+        .info-value {
+            padding: 8px 12px;
+            background-color: white;
+            border: 1px solid #e0e6ed;
             border-radius: 4px;
-            padding: 15px;
+            min-height: 20px;
+            font-size: 14px;
+            color: #2c3e50;
+        }
+        
+        /* Invoice Details Card */
+        .invoice-details-card {
+            background-color: white;
+            border: 1px solid #e0e6ed;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
         
         .detail-item {
-            margin-bottom: 10px;
-            font-size: 14px;
+            margin-bottom: 18px;
         }
         
         .detail-label {
             font-weight: 600;
-            color: #555;
+            color: #5d6d7e;
+            font-size: 13px;
             display: block;
-            margin-bottom: 2px;
+            margin-bottom: 5px;
         }
         
         .detail-value {
             font-size: 15px;
-            font-weight: 500;
+            color: #2c3e50;
+            padding: 10px;
+            background-color: #f8fafc;
+            border-radius: 4px;
+            border-left: 3px solid #3498db;
         }
         
-        /* Balance Summary */
-        .balance-summary {
-            background-color: #f1f3f4;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            padding: 20px;
-            margin: 30px 0;
+        /* Balance Section */
+        .balance-section {
+            background: linear-gradient(135deg, #f8fafc 0%, #edf2f7 100%);
+            border: 1px solid #dbe4ed;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 35px 0;
+        }
+        
+        .balance-header {
+            font-size: 18px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .balance-header:before {
+            content: '•';
+            color: #3498db;
+            font-size: 24px;
+            margin-right: 10px;
         }
         
         .balance-row {
             display: flex;
             justify-content: space-between;
-            padding: 8px 0;
+            padding: 12px 0;
+            border-bottom: 1px dashed #dbe4ed;
             font-size: 14px;
-            border-bottom: 1px solid #e0e0e0;
         }
         
         .balance-row:last-child {
             border-bottom: none;
             font-weight: 600;
-            font-size: 15px;
-            padding-top: 12px;
+            font-size: 16px;
+            color: #2c3e50;
+            padding-top: 15px;
+            margin-top: 5px;
         }
         
-        /* Table Styling */
-        .table-section {
+        /* Table Section */
+        .table-container {
             margin: 40px 0 30px 0;
+        }
+        
+        .table-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ecf0f1;
         }
         
         table {
@@ -158,239 +226,244 @@
             border-collapse: collapse;
             margin: 15px 0 25px 0;
             font-size: 14px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 1px 8px rgba(0,0,0,0.05);
+        }
+        
+        thead {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
         }
         
         th {
-            background-color: #f8f9fa;
+            padding: 16px 20px;
             text-align: left;
-            padding: 12px 15px;
-            border: 1px solid #e0e0e0;
             font-weight: 600;
-            color: #333;
+            font-size: 14px;
         }
         
         td {
-            padding: 12px 15px;
-            border: 1px solid #e0e0e0;
-            vertical-align: top;
+            padding: 14px 20px;
+            border-bottom: 1px solid #ecf0f1;
         }
         
-        tr:nth-child(even) {
-            background-color: #fafafa;
+        tbody tr {
+            transition: background-color 0.2s;
+        }
+        
+        tbody tr:hover {
+            background-color: #f8fafc;
+        }
+        
+        tbody tr:nth-child(even) {
+            background-color: #fafcfd;
         }
         
         /* Totals Section */
-        .totals-section {
-            margin: 30px 0;
+        .totals-container {
             display: flex;
             justify-content: flex-end;
+            margin: 30px 0 40px 0;
         }
         
-        .totals-box {
-            width: 300px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            padding: 20px;
-            background-color: #f8f9fa;
+        .totals-card {
+            width: 350px;
+            background-color: white;
+            border: 1px solid #e0e6ed;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
         }
         
-        .total-row {
+        .total-line {
             display: flex;
             justify-content: space-between;
-            padding: 10px 0;
+            padding: 12px 0;
             font-size: 14px;
-            border-bottom: 1px solid #e0e0e0;
+            border-bottom: 1px solid #ecf0f1;
         }
         
-        .total-row:last-child {
+        .total-line:last-child {
             border-bottom: none;
-            font-weight: 600;
-            font-size: 16px;
-            color: #222;
+            font-weight: 700;
+            font-size: 18px;
+            color: #2c3e50;
             padding-top: 15px;
+            margin-top: 10px;
+            background-color: #f8fafc;
+            padding: 15px;
+            border-radius: 6px;
+            margin-left: -15px;
+            margin-right: -15px;
+            margin-bottom: -15px;
+        }
+        
+        .total-label {
+            color: #5d6d7e;
         }
         
         /* Footer */
         .footer {
             margin-top: 50px;
             padding-top: 20px;
-            border-top: 1px solid #ddd;
-            font-size: 13px;
-            color: #666;
-            line-height: 1.6;
+            border-top: 3px solid #ecf0f1;
+            text-align: center;
+            font-size: 12px;
+            color: #7f8c8d;
         }
         
-        .payment-instructions {
-            background-color: #f8f9fa;
-            border: 1px solid #e0e0e0;
-            border-radius: 4px;
-            padding: 15px;
-            margin-top: 15px;
-            font-size: 13px;
+        /* Placeholder styling */
+        .placeholder {
+            color: #95a5a6;
+            font-style: italic;
         }
         
-        /* Divider Lines */
-        .divider {
-            height: 1px;
-            background-color: #ddd;
-            margin: 20px 0;
-        }
-        
-        .divider-thick {
-            height: 2px;
-            background-color: #333;
-            margin: 25px 0;
+        /* Amount styling */
+        .amount {
+            font-family: 'Courier New', monospace;
+            font-weight: 600;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <!-- Header -->
-        <div class="header">
-            <div class="logo-placeholder">Company Logo</div>
-            <div class="company-info">
+        <div class="header-section">
+            <div class="logo-area">
+                A blue text with a black background AI-generated content may be incorrect.
+            </div>
+            <div class="clinic-info">
                 10526 SE Washington Street, Suite A-103<br>
                 Portland, OR 97216<br>
                 Phone: (503) 905-5200
             </div>
         </div>
         
-        <!-- Invoice Title -->
-        <div class="invoice-title">INVOICE</div>
+        <!-- Main Title -->
+        <div class="main-title">Invoice</div>
         
-        <!-- Two Column Layout -->
-        <div class="two-column">
-            <!-- Left Column: Member Information -->
-            <div class="column-left">
-                <div class="section">
-                    <div class="section-header">Member Information</div>
-                    <div class="info-grid">
-                        <div class="info-item">
-                            <span class="info-label">Name:</span> Alex Johnson
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">Address:</span> 123 Main St, Portland, OR 97201
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">Phone:</span> (503) 123-4567
-                        </div>
-                        <div class="info-item">
-                            <span class="info-label">Email:</span> alex.johnson@example.com
-                        </div>
+        <!-- Content Columns -->
+        <div class="content-columns">
+            <!-- Member Information -->
+            <div class="member-column">
+                <div class="section-header">Member Information</div>
+                <div class="member-details">
+                    <div class="info-line">
+                        <div class="info-label">Member Name</div>
+                        <div class="info-value placeholder">[Member Name]</div>
+                    </div>
+                    <div class="info-line">
+                        <div class="info-label">Billing Address</div>
+                        <div class="info-value placeholder">[Billing Address]</div>
+                    </div>
+                    <div class="info-line">
+                        <div class="info-value placeholder">[City], [State], [Zip]</div>
+                    </div>
+                    <div class="info-line">
+                        <div class="info-label">Primary Cell</div>
+                        <div class="info-value placeholder">[Primary Cell]</div>
+                    </div>
+                    <div class="info-line">
+                        <div class="info-label">Primary Email</div>
+                        <div class="info-value placeholder">[Primary Email]</div>
                     </div>
                 </div>
             </div>
             
-            <!-- Right Column: Invoice Details -->
-            <div class="column-right">
-                <div class="invoice-details">
+            <!-- Invoice Details -->
+            <div class="invoice-column">
+                <div class="section-header">Invoice Details</div>
+                <div class="invoice-details-card">
                     <div class="detail-item">
-                        <span class="detail-label">Invoice Number</span>
-                        <div class="detail-value">INV-2023-087</div>
+                        <div class="detail-label">Invoice Number</div>
+                        <div class="detail-value placeholder">[HW Generate Invoice Number]</div>
                     </div>
                     <div class="detail-item">
-                        <span class="detail-label">Issue Date</span>
-                        <div class="detail-value">November 1, 2023</div>
+                        <div class="detail-label">Issue Date</div>
+                        <div class="detail-value placeholder">[5 Days Prior to Due Date]</div>
                     </div>
                     <div class="detail-item">
-                        <span class="detail-label">Due Date</span>
-                        <div class="detail-value">November 15, 2023</div>
+                        <div class="detail-label">Due Date</div>
+                        <div class="detail-value placeholder">[1st - 5th of Every Month]</div>
                     </div>
                 </div>
             </div>
         </div>
         
-        <!-- Divider -->
-        <div class="divider-thick"></div>
-        
-        <!-- Balance Summary -->
-        <div class="balance-summary">
-            <div class="section-header">Balance Summary</div>
+        <!-- Balance Section -->
+        <div class="balance-section">
+            <div class="balance-header">Balance Summary</div>
             <div class="balance-row">
-                <span>Previous Balance</span>
-                <span>$0.00</span>
+                <span>Previous Balance Amount</span>
+                <span class="amount">$[Amount Previously Invoiced]</span>
             </div>
             <div class="balance-row">
                 <span>Amount Paid</span>
-                <span>$0.00</span>
+                <span class="amount">$[Amount Paid toward last invoiced amount]</span>
             </div>
             <div class="balance-row">
                 <span>Amount Outstanding</span>
-                <span>$0.00</span>
+                <span class="amount">$[Previous Balance less Amount Paid]</span>
             </div>
         </div>
         
-        <!-- Divider -->
-        <div class="divider"></div>
-        
-        <!-- Monthly Subscriptions Table -->
-        <div class="table-section">
-            <div class="section-header">Monthly Pet Plan Subscriptions</div>
+        <!-- Table Section -->
+        <div class="table-container">
+            <div class="table-title">Monthly Recurring Fees</div>
             <table>
                 <thead>
                     <tr>
                         <th>Service</th>
                         <th>Pet Name / Pet ID</th>
                         <th>Monthly Fee</th>
-                        <th>Quantity</th>
                         <th>Subtotal</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Premium Care Plan</td>
-                        <td>Buddy (ID: PET-001)</td>
-                        <td>$45.00</td>
-                        <td>1</td>
-                        <td>$45.00</td>
+                        <td>Total Lifetime Care™ Plan</td>
+                        <td class="placeholder">[Pet Name / Pet ID]</td>
+                        <td class="placeholder">$[Monthly Support Fee Total]</td>
+                        <td class="placeholder">= Amount in Column 3</td>
                     </tr>
                     <tr>
-                        <td>Basic Care Plan</td>
-                        <td>Mittens (ID: PET-002)</td>
-                        <td>$25.00</td>
-                        <td>1</td>
-                        <td>$25.00</td>
+                        <td>Total Lifetime Care™ Plan</td>
+                        <td>Teddy / 104756</td>
+                        <td class="amount">$97.39</td>
+                        <td class="amount">$97.39</td>
                     </tr>
                     <tr>
-                        <td>Dental Add-on</td>
-                        <td>Buddy (ID: PET-001)</td>
-                        <td>$15.00</td>
-                        <td>1</td>
-                        <td>$15.00</td>
+                        <td>Total Lifetime Care™ Plan</td>
+                        <td>Ziggy / 108550</td>
+                        <td class="amount">$105.59</td>
+                        <td class="amount">$105.59</td>
                     </tr>
                 </tbody>
             </table>
         </div>
         
-        <!-- Divider -->
-        <div class="divider"></div>
-        
         <!-- Totals Section -->
-        <div class="totals-section">
-            <div class="totals-box">
-                <div class="total-row">
-                    <span>Monthly Total</span>
-                    <span>$85.00</span>
+        <div class="totals-container">
+            <div class="totals-card">
+                <div class="total-line">
+                    <span class="total-label">Monthly Total</span>
+                    <span class="amount">$202.98</span>
                 </div>
-                <div class="total-row">
-                    <span>Past Due Amount</span>
-                    <span>$0.00</span>
+                <div class="total-line">
+                    <span class="total-label">Past Due Amount</span>
+                    <span class="amount">$0.00</span>
                 </div>
-                <div class="total-row">
+                <div class="total-line">
                     <span>Total Amount Due</span>
-                    <span>$85.00</span>
+                    <span class="amount">$202.98</span>
                 </div>
             </div>
         </div>
         
         <!-- Footer -->
         <div class="footer">
-            <div class="payment-instructions">
-                <strong>Payment Instructions:</strong> Please make payments payable to [Your Company Name]. Payment can be made online through our member portal or by mail to the address above.
-            </div>
-            <p style="text-align: center; margin-top: 20px; font-style: italic;">
-                Thank you for being a valued member!
-            </p>
+            <p>Please remit payment by the due date. Thank you for your business.</p>
         </div>
     </div>
 </body>
